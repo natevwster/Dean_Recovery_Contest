@@ -28,13 +28,13 @@ data = {
         "Keith the Lover of Pugs",
     ],
     "Current Score": [
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
+        "3",
+        "6",
+        "1",
+        "2",
+        "4",
+        "7",
+        "2",
     ],
 }
 
@@ -44,14 +44,23 @@ st.write(df)
 
 Bar_Chart = alt.Chart(df).mark_bar().encode(
     alt.X('Participant'),
-    alt.Y('Current Score', sort=None)
+    alt.Y('Current Score', sort='y')
     ).properties(
-        title="Current Scores"
+        title="Standings"
     ).configure_title(
         anchor='middle'
     )
 
 st.altair_chart(Bar_Chart)
+
+Bar_Chart2 = alt.Chart(df).mark_bar().encode(
+    x='Participant',
+    y='Current Score'
+)
+
+
+st.altair_chart(Bar_Chart2)
+
 # st.write(
 #     "Now I want to evaluate the responses from my model. "
 #     "One way to achieve this is to use the very powerful `st.data_editor` feature. "
