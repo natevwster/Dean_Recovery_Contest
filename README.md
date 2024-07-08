@@ -1,7 +1,6 @@
 # 📊 Data evaluation template
 
-A simple Streamlit app showing how to evaluate and annotate data, using dataframes
-and charts. 
+Let's help Dean celebrate his successful surgery!  To raise awareness for Dean's condition we will be racing to recovery.  First to 40 wins!
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://data-evaluation-template.streamlit.app/)
 
