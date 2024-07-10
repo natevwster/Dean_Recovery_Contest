@@ -61,6 +61,44 @@ Bar_Chart2 = alt.Chart(df).mark_bar().encode(
 
 st.altair_chart(Bar_Chart2)
 
+data2 = {
+    "Participant": [
+        "Nathan Van Wieren",
+        "Josh Dean",
+        "Rob Van Dam",
+        "David Van Dam",
+        "Adam Brouwer",
+        "Jesse Powers",
+        "Keith the Lover of Pugs",
+    ],
+    "July 8": [
+        "3",
+        "6",
+        "1",
+        "2",
+        "4",
+        "7",
+        "2",
+    ],
+
+        "July 9": [
+        "2",
+        "4",
+        "7",
+        "1",
+        "3",
+        "5",
+        "4",
+    ],
+}
+
+df2 = pd.DataFrame(data2)
+
+Bar_Chart2 = alt.Chart(df).mark_bar().encode(
+    x='Participant',
+    y='July 9'
+)
+
 # st.write(
 #     "Now I want to evaluate the responses from my model. "
 #     "One way to achieve this is to use the very powerful `st.data_editor` feature. "
