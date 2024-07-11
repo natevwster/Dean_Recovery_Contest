@@ -50,6 +50,8 @@ data = {
 
 df = pd.DataFrame(data)
 
+st.dataframe(df, hide_index=True)
+
 st.write(df)
 
 st.bar_chart(df)
