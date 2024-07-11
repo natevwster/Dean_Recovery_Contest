@@ -1,12 +1,22 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from PIL import Image
+import numpy as np
 
 
-st.title("📊 Dean's Recovery Contest App")
+st.title("Dean's Recovery Contest App:eggplant:")
 
+image = Image.open('Dean.PNG')
+
+st.image(image, caption='Dean Before His Life-Altering Surgery')
+
+#st.write(
+#    "The Contest Began Monday at 12:00 AM ✨ "
+
+#)
 st.write(
-    "The Contest Begins Monday at 12:00 AM ✨ "
+    "Current Standings :eggplant:"
 
 )
 
@@ -28,13 +38,13 @@ data = {
         "Keith the Lover of Pugs",
     ],
     "Current Score": [
-        "3",
-        "6",
-        "1",
-        "2",
-        "4",
+        "11",
+        "11",
         "7",
-        "2",
+        "6",
+        "8",
+        "11",
+        "8",
     ],
 }
 
@@ -42,62 +52,68 @@ df = pd.DataFrame(data)
 
 st.write(df)
 
-Bar_Chart = alt.Chart(df).mark_bar().encode(
-    alt.X('Participant'),
-    alt.Y('Current Score', sort='y')
-    ).properties(
-        title="Standings"
-    ).configure_title(
-        anchor='middle'
-    )
+st.bar_chart(df)
 
-st.altair_chart(Bar_Chart)
+# Bar_Chart = alt.Chart(df).mark_bar().encode(
+#      alt.X('Participant'),
+#      alt.Y('Current Score'),
+#      ).properties(
+#          title="Standings"
+#      ).configure_title(
+#          anchor='middle'
+#      )
 
-Bar_Chart2 = alt.Chart(df).mark_bar().encode(
-    x='Participant',
-    y='Current Score'
-)
+# chart_data = df
+
+# st.bar_chart(chart_data, x="Participant", y="Current Score", Title="Standings")
 
 
-st.altair_chart(Bar_Chart2)
+# Bar_Chart2 = alt.Chart(df).mark_bar().encode(
+#     x='Participant',
+#     y='Current Score'
+# )
 
-data2 = {
-    "Participant": [
-        "Nathan Van Wieren",
-        "Josh Dean",
-        "Rob Van Dam",
-        "David Van Dam",
-        "Adam Brouwer",
-        "Jesse Powers",
-        "Keith the Lover of Pugs",
-    ],
-    "July 8": [
-        "3",
-        "6",
-        "1",
-        "2",
-        "4",
-        "7",
-        "2",
-    ],
 
-        "July 9": [
-        "2",
-        "4",
-        "7",
-        "1",
-        "3",
-        "5",
-        "4",
-    ],
-}
+# st.altair_chart(Bar_Chart2)
 
-df2 = pd.DataFrame(data2)
+# data2 = {
+#     "Participant": [
+#         "Nathan Van Wieren",
+#         "Josh Dean",
+#         "Rob Van Dam",
+#         "David Van Dam",
+#         "Adam Brouwer",
+#         "Jesse Powers",
+#         "Keith the Lover of Pugs",
+#     ],
+#     "July 8": [
+#         "3",
+#         "6",
+#         "1",
+#         "2",
+#         "4",
+#         "7",
+#         "2",
+#     ],
 
-Bar_Chart2 = alt.Chart(df).mark_bar().encode(
-    x='Participant',
-    y='July 9'
-)
+#         "July 9": [
+#         "2",
+#         "4",
+#         "7",
+#         "1",
+#         "3",
+#         "5",
+#         "4",
+#     ],
+# }
+
+# df2 = pd.DataFrame(data2)
+
+# Bar_Chart2 = alt.Chart(df).mark_bar().encode(
+#     x='Participant',
+#     y='July 9'
+# )
+
 
 # st.write(
 #     "Now I want to evaluate the responses from my model. "
