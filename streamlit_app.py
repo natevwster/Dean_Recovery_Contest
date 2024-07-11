@@ -53,7 +53,28 @@ df = pd.DataFrame(data)
 st.dataframe(df, hide_index=True)
 
 
-st.bar_chart(df)
+# st.bar_chart(df)
+
+# modified = pd.DataFrame(data)
+
+# modified=modified.set_index("Participant")
+
+# st.bar_chart(modified)
+
+
+
+
+Participant = np.array(['Nathan Van Wieren', 'Josh Dean', 'Rob Van Dam', 'David Van Dam', 'Adam Brouwer', 'Jesse Powers', 'Keith Lover of Pugs' ])
+Score = np.array([11, 11, 7, 6, 8, 11, 8])
+
+chart_data = pd.DataFrame()
+chart_data['Participant'] = Participant
+chart_data['Score'] = Score
+
+chart_v1 = alt.Chart(chart_data).mark_bar().encode(
+x='Participant',
+y='Score')
+st.write("", "", chart_v1)
 
 # Bar_Chart = alt.Chart(df).mark_bar().encode(
 #      alt.X('Participant'),
